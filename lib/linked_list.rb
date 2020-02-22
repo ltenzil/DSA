@@ -5,7 +5,6 @@ class LinkedList
 
 	def initialize
 		@head = nil
-		# @tail = nil
 	end
 
 	def insert(value)
