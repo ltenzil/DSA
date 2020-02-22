@@ -63,4 +63,19 @@ class LinkedList
     end
     return current
   end
+
+  def reverse
+  	return "No Records" if @head.nil?
+  	current = @head
+	  previous = nil
+
+	  while current
+	    next_node = current.next
+	    current.next = previous
+	    previous = current
+	    current = next_node
+	  end
+
+	  @head = previous
+  end
 end
