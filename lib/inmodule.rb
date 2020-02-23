@@ -43,3 +43,6 @@ class ExAnimal
 		@age = age
 	end
 end
+
+# extend takes self context. If class extending module then class methods. 
+# instance is extending then instance methods
