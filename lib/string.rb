@@ -157,3 +157,32 @@ h.store(:b,2) # More verbose: h is now {:a=>1, :b=>2}
 # use replace:
 # Replace all of the pairs in h with those from another hash
 h.replace({1=>:a, 2=>;b} # h is now equal to the argument hash
+
+# String vs symbols
+
+# symbols are indentifiers, immutable
+# strings are mutable, we can ruby code even in it.
+
+
+
+string_in = "aaaggbbbbc"
+string_out = ""
+while string_in.length > 0
+  string_out << (string_in.count(string_in[0]).to_s + string_in[0])
+  string_in.delete!(string_in[0])
+end
+puts string_out
+# 3a2g4b1c
+
+class String
+  def word_count
+  frequencies = Hash.new(0)
+  downcase.scan(/\w+/) { |word| frequencies[word] += 1 }
+  return frequencies
+  end
+end
+
+
+def wrapp(s, size=78)
+  s.gsub(/(.{1,#{size}})(\s+|\Z)/, "\\1\n")
+end

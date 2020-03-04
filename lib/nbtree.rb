@@ -23,6 +23,18 @@ class Node
     return root
   end
 
+
+  def self.is_valid_node(node)
+    current = node
+    left, right = current.left, current.right
+    return true if left.nil? && right.nil?
+    min =  left.value 
+    max =  right.value
+    return true  if (min < current.value) &&  (current.value < max)
+    false
+  end
+
+
   def self.breadth_first_search(search_value, tree)
     queue = [tree]
     visited = [tree]
